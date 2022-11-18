@@ -25,4 +25,4 @@ script.addEventListener("load", function () {
 });
 ```
 
-The `start` will render an entry point - and later the actual ludio player - inside a a shadow root - to make sure ludio styles won't conflict with your page styles.
+The `start` will render an entry point and later the actual ludio player inside a a shadow root, to make sure ludio styles won't conflict with your page styles.
