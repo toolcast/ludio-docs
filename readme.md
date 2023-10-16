@@ -8,10 +8,29 @@ Once you have a unique `guideId` and an `apiKey`, you can use our script:
 <script src="https://unpkg.com/@ludio/player@^0/dist/main.js" />
 ```
 
-Once the script is loaded, you access `ludio` globally, and trigger your guide:
+Once the script is loaded, you access `ludio` globally.
+
+## API
+
+There are two main ways to use Ludio:
+
+1. Managed - Ludio manages when a guide should play and when to render guide entry points
+2. Controlled - the entry points are controlled by you, and you trigger when a guide should be played
+
+### Managed
+
+To trigger a managed Ludio guide, call the `start` method:
 
 ```js
 ludio.start({ configId: "yourGuideIdHere", apiKey: "yourApiKeyHere" });
+```
+
+### Controlled
+
+To trigger a managed ludio guide, call the `start` method:
+
+```js
+ludio.play({ configId: "yourGuideIdHere", apiKey: "yourApiKeyHere" });
 ```
 
 You can also trigger everything programatically:
@@ -21,11 +40,15 @@ const script = document.createElement("script");
 script.src = "https://unpkg.com/@ludio/player@^0/dist/main.js";
 document.body.appendChild(script);
 script.addEventListener("load", function () {
-  ludio.start({ configId: "yourGuideIdHere", apiKey: "yourApiKeyHere" });
+  // ludio.start({ configId: "yourGuideIdHere", apiKey: "yourApiKeyHere" });
+  // Or
+  // ludio.play({ configId: "yourGuideIdHere", apiKey: "yourApiKeyHere" });
 });
 ```
 
-The `start` method will render an entry point and later the actual ludio player inside a a shadow root, to make sure ludio styles won't conflict with your page styles.
+The actual ludio player is rendered inside a a shadow root, to make sure ludio styles won't conflict with your page styles.
+
+## Additional Methods
 
 ### BI Logger
 
